@@ -44,13 +44,13 @@ export class TasksController {
   }
 
   @Patch(':id')
-  @ApiOkResponse({ type: [UpdateResult] })
+  @ApiOkResponse({ type: UpdateResult })
   update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
     return this.tasksService.update(+id, updateTaskDto);
   }
 
   @Delete(':id')
-  @ApiOkResponse({ type: [DeleteResult] })
+  @ApiOkResponse({ type: DeleteResult })
   remove(@Param('id') id: string) {
     return this.tasksService.remove(+id);
   }
